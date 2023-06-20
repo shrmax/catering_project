@@ -1,0 +1,462 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(14, 14, 14);
+    color:papayawhip;
+
+}
+header{
+    width: 100%;
+}
+.container{
+    padding: 10px 3%;
+
+}
+.logo{
+    width: 90px;
+    border-radius: 30px;
+   aspect-ratio: 1/.75;
+    
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+nav ul li .login-button{
+    width: 90px;
+    height: 40px;
+    color: aliceblue;
+    background-color:transparent;
+    border: 2px solid whitesmoke;
+    font-size: 15px;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: .5s;
+}
+nav ul li .login-button:hover{
+    background-color: aliceblue;
+    color: black;
+
+}
+nav ul li a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #e80a54;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    transition: .6s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+/* .page{
+    padding: 100px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+} */
+
+.wrapper{
+   position: absolute;
+   top: 20%; 
+   left: 55%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgb(178, 177, 175);
+    /* transform: scale(1);
+    overflow: hidden;
+    transform: height .6s ease ;
+    z-index: 1; */
+}
+.title{
+    position: absolute;
+    top: 25%; 
+    left: 7%;
+    color: #e80a54;
+    font-size: 75px;
+    font-weight: 700;
+    text-decoration:underline dotted red;
+    
+}
+ .titles{
+    position: absolute;
+    top: 30%; 
+    left: 3%;
+    color: #e80a54;
+    font-size: 75px;
+    font-weight: 700;
+   
+}
+.title img{
+    position: relative;
+    width: 220px;
+    left: 25%;
+    border-radius: 30px;
+   
+
+}
+.wrapper.active{
+    top: 5%;
+    height: 700px;
+}
+.wrapper .box_login.clients{
+    position: fixed;
+    top: 10%;
+}
+/* .wrapper.vendor .vendor_login.clients{
+    position: fixed;
+    top: 3%;    
+} */
+
+.box_login, .vendor_login {
+    width: 100%;
+    padding: 40px;
+}
+.box_login h2, .vendor_login h2{
+    padding-top: 5%;
+    font-size: 2em;
+    text-align: center;
+}
+.box_register{
+    width: 100%;
+    padding: 40px;
+}
+.box_register h2, .vendor_login h2{
+    font-size: 2em;
+    text-align: center;
+}
+.inputbox{
+    position: relative;
+    width: 100%;
+    height:50px ;
+    border-bottom: 2px solid wheat;
+    margin: 30px 0;
+}
+.inputbox label{
+    position: absolute;
+    top: 60%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -5px;
+}
+.inputbox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;  
+    outline: none;
+    color:wheat;
+    font-size: 1.1em;
+    font-weight: 700;
+    padding: 0 10px;
+}
+.inputbox .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: rgb(143, 137, 137);
+    line-height: 57px;
+}
+.btn{
+    width: 90%;
+    height: 50px;
+    margin: 0 5%;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    background-color: gray;
+}
+.register{
+    font-size: .9em;
+    text-align: center;
+    margin: 5%;
+}
+.register p a{
+    text-decoration: none;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
+.hello{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(71, 71, 122);
+    height: 400px;
+    width: 95%;
+    font-size: 50px;
+    font-family: Lucida Sans Typewriter;
+    border-radius: 30px;
+    box-shadow: 0px 15px 10px -15px #e4b6b6; 
+}
+    /* .maincontent{
+        height: 300px;
+        background: #dd5555;
+    } */
+ .main p{
+        font-size: 40px;
+        padding: 30px 10px;
+        color: aquamarine;
+    }
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(81, 63, 40);
+    margin: 10px 0;
+    height: 70px;
+}
+
+
+
+/* userslist */
+main{
+   border: 2px solid white;
+   border-radius: 10px;
+}
+ .list{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    padding: 3rem ;
+ }
+
+ .fields{
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: rgb(125, 121, 121);
+    padding: 1.5rem 1.5rem;
+    border-radius: 10px;
+ }
+ .line{
+     margin-bottom: .5rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     color: black;
+     background-color: white;
+     padding: 1.5rem 2rem;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all .3s;
+     
+    }
+/* .lines td{
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+   
+    } */
+ /* .line:hover{
+    box-shadow: 0 0 .8rem rgb(121, 90, 90);
+ } */
+ .line table tr{
+    margin: -.5rem 0;
+    margin-left: 2.5rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     color: black;
+     background-color: white;
+     border-radius: 10px;
+     cursor: pointer;
+    
+ }
+ .line table tr td{
+    width: 17rem;
+    display: flex;
+    justify-content: center;
+ }
+
+
+ /* providers*/
+.buttons{
+
+    position: relative;
+    padding: 10px 0;
+    padding-left: 40%;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.buttons .button_i{
+    font-size: 20px;
+    background-color: greenyellow;
+    border: none;
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    margin: 0 30px;
+    cursor: pointer;
+    
+}
+.buttons .button_d{
+    font-size: 20px;
+    background-color: red;
+    border: none;
+    height: 40px;
+    width: 70px;
+    border-radius: 10px;
+    margin: 0 30px;
+    cursor: pointer;
+}
+/* feedbacks */
+.username{
+    position: relative;
+    margin-left: 90%;
+    margin-top: -1%;
+    padding-bottom: 4%;
+}
+.message{
+    position: fixed;
+    padding-top: 1%;
+    width: 70%;
+}
+.feedback{
+    position: relative;
+   width: 100%;
+    background-color: white;
+}
+.feedback:hover{
+    box-shadow: 0 0 .8rem rgb(3, 0, 0);
+ }
+
+ /* items  */
+ .button_add{
+    font-size: 20px;
+    background-color: greenyellow;
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    margin: 0 30px;
+    cursor: pointer;
+ }
+  
+  .category label {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    border: 1px solid rgb(112, 23, 23);
+    cursor: pointer;
+  }
+  
+  /* .category label:hover {
+    background-color: lightgray;
+  } */
+  
+  .category label:checked {
+    background-color: red;
+    color: white;
+  }
+  /* .name{
+    justify-content: center;
+   
+  } */
+
+  .fields th{
+    padding: 0 8rem;
+  }
+
+.items{
+    display: flex;
+    align-items: center;
+    padding: 2px 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.items p{
+    margin-right: 5rem;
+    color: #e80a54;
+}
+.items button{
+    width: 7rem;
+    height: 2rem;
+    font-size: 1rem;
+    color: goldenrod;
+    margin: 0 3rem;
+    border-radius: 15px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.items button:active{
+    background-color: #e4b6b6;
+}
+.items button:visited{
+    background-color: #e4b6b6;
+}
+.wrapper.new{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 80%;
+    width: 50%;
+
+}
+.inputbox.file{
+    border-bottom: none;
+}
+.inputbox.file input{
+    margin: 1.5rem 0;
+}
+.btn.insert {
+    width: 10rem;
+
+}
+
+
+.button_delete{
+    font-size: 15px;
+    background-color: red;
+    border: 2px solid black;
+    height: 35px;
+    width: 70px;
+    border-radius: 10px;
+    margin-left: 10rem;
+    cursor: pointer;
+}
+  
