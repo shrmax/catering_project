@@ -31,7 +31,6 @@
         ?>
     </div>
   </div>
-  hello there
   <?php
   include_once 'partial/footer.php';
   ?>
