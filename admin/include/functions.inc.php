@@ -106,6 +106,20 @@ function additem($con,$name,$description,$image){
     header("location: ../items.php?error=none");
     exit();
 }
+function addevent($con,$name,$description,$image){
+    $sql= "INSERT INTO events (image,name,description) VALUES (?,?,?);";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../events.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"sss",$image,$name,$description);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../events.php?error=none");
+    exit();
+}
 function remove($con, $id){
     $sql= "DELETE FROM ".$_SESSION['table']." where id=?;";
     $stmt= mysqli_stmt_init($con);

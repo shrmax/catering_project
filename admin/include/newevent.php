@@ -16,8 +16,8 @@
 
         <!-- register -->
         <div class="box_register">
-            <h2>Add New Item</h2>
-            <form action="add.php" method="post" enctype="multipart/form-data" >
+            <h2>Add New Event</h2>
+            <form action="addevent.php" method="post" enctype="multipart/form-data" >
                 <!-- name -->
                 <div class="inputbox">
                     

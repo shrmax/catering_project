@@ -9,7 +9,6 @@ $result = mysqli_query($con, $query);
 </div>
 <div class="collection">
 <?php
-$i=0;
 while($row= mysqli_fetch_assoc($result)){
 ?>
 <div class="provider">

@@ -23,10 +23,17 @@ session_start();
                 <li><a href="online_booking.php">Online catering booking</a></li>
                 <li><a href="#">My Bookings</a></li>
                 <li><a href="contact_us.php">Contact Us</a></li>
+                <li><a href="#"></a></li>
                 <?php
                 if (isset($_SESSION["userid"])){
-                    echo "<li><a href=''>Profile</a></li>";
-                    echo "<li><a href='include/logout.inc.php'>Logout</a></li>";
+                    include_once 'partial/header.php';
+include_once 'include/dbh.inc.php';
+$sql='select * from signup where usr_id='.$_SESSION['userid'].';';
+$result= mysqli_query($con,$sql);
+                    while($row=mysqli_fetch_assoc($result)){
+                        $image=$row['image'];
+                    echo "<li><a href='profile.php'><img src='profileimages/".$image."' alt=''></a></li>";
+                    }
                 }
                 else {
                     echo "<li><button class='login-button'>Login</button></li>";
@@ -38,7 +45,7 @@ session_start();
     </div>
 </header>
 <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+        <span id="icon-close" class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
         <!-- user login page -->
         <div class="box_login">
                 <div class="clients">

@@ -73,12 +73,15 @@ nav ul li a::after{
 nav ul li a:hover::after{
     width: 100%;
 }
-/* .page{
-    padding: 100px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-} */
+nav ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    position: absolute;
+    top: -.5rem;
+    right: .5rem;
+}
+
 
 .wrapper{
    position: fixed;
@@ -470,6 +473,7 @@ color: aqua;
     position: relative;
     display: flex;
     height:400px ;
+    
     border: 2px solid wheat;
     border-radius: 20px;
     overflow: hidden;
@@ -488,7 +492,7 @@ color: aqua;
     /* width: auto; */
     max-width: 100%;
     /* height: auto; */
-    max-height: 100%;
+    max-height: fit-content;
     /* object-fit: fill; */
    
     
@@ -559,19 +563,7 @@ color: aqua;
 .qq{
     margin-left: 2rem;
 }
-.imageabout{
-    height: auto;
-    border: 2px solid red;
-}
-.imga{
-    display: flex;
-    justify-content:space-evenly;
-    font-size: 1.5rem;
-}
-.imga a{
-    text-decoration: none;
-    color: inherit;
-}
+
 .grp{
     display: flex;
     flex-direction: column;
@@ -580,7 +572,7 @@ color: aqua;
 }
 .grp img{
     max-width: 100%;
-    max-height: 120%;
+    height: 420px;
 }
 .book{
     width: 40%;
@@ -589,6 +581,7 @@ color: aqua;
     width: 40%  ;
     color: rgb(192, 171, 171);
     background-color: #3F0071;
+    height: 710px;
     /* border-bottom: 2px solid grey; */
 }
 .abc{
@@ -619,13 +612,231 @@ color: aqua;
     padding-top: 3rem;
 }
 .bookbutton button{
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgb(74, 245, 74);
     font-size: 1.5rem;
     padding: .7rem;
+    border: black;
     border-radius: 30px;
     transition: .5s;
 }
 .bookbutton button:hover{
-    background-color: rgb(5, 72, 5);
+    background-color: rgb(7, 214, 7);
+    transform: scale(1.09);
+}
+.imageabout{
+    position: relative;
+    margin: auto;
+    width: 90%;
+    /* border: 2px solid red; */
+}
+.imga{
+    position: relative;
+    position: sticky;
+    top: 0;
+    font-size: 1.5rem;
+    background-color: #3F0071;
+    padding: 1rem;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+.imga a{
+    text-decoration: none;
+    color: inherit;
+    margin: 0 1.5em;
+}
+.pimages{
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: .5em; 
+    margin: 1em 0;
+    padding: 1em 1em;
+    border: 2px solid wheat;
+    border-radius: 20px;
+    background-color: white;
+}
+.lkd{
+    height: 100%;
+    width: 300px;
+    border: 2px solid red;
+    
+}
+.about{
+    padding: 2rem 0;
+    width: 90%;
+    word-wrap: break-word;
+    font-size: 1.1em;
+}
+.about pre{
+    white-space: pre-wrap;
+    padding: 1rem 2em;
+}
+.imageabout h1{
+    color:aliceblue; 
+    font-size:2em;
+    border-bottom:solid red 5px; 
+    width:110px;
+    margin-left: 2rem;
+}
+.eves{
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.buttoneves{
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: .5rem .5rem;
+    margin: .3em .5em;
+    font-size: 20px;
+    color: #02645f;
+}
+/* events */
+.img.a{
+    height: inherit;
+}
+.eventname{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #07f107;
+    font-size: 2.7rem;
+    font-family: Lucida Sans Typewriter;
+    text-transform: uppercase;
+}
+.b{
+    height: 300px;
+    width: 290px;
+}
+/* order form */
+.order section, #order_form{
+    border: 2px solid white;
+    width: 90%;
+    margin: auto;
+    border-radius: 20px;
+}
+.formdata{
+    display: flex;
+    padding: 2rem 0;
+
+}
+.formdata label{
+   margin-left: 15%;
+   width: 20%; 
+   font-size: 1.2rem;
+
+}
+.formdata input,.formdata p{
+ background: transparent;
+ border: none;
+ outline: none;
+ color: wheat;
+ margin-left: 1rem;
+ font-size: 1.2rem;
+ border-bottom: 2px solid white;
+ width: 50%;
+}
+.list{
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    padding: 3rem ;
+ }
+
+ .fields{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: rgb(125, 121, 121);
+    padding: 1.5rem 1.5rem;
+    border-radius: 10px;
+ }
+ .fields th{
+    width: 14rem;
+ }
+ .line{
+     margin-bottom: .5rem;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     color: black;
+     background-color: white;
+     padding: 1.5rem 2rem;
+     border-radius: 10px;
+     cursor: pointer;
+     transition: all .3s;
+     
+    }
+/* .lines td{
+    display: flex;
+    align-items: center;
+    justify-self: space-between;
+   
+    } */
+ /* .line:hover{
+    box-shadow: 0 0 .8rem rgb(121, 90, 90);
+ } */
+ .line table tr{
+    margin: -.5rem 0;
+    /* margin-left: 2.5rem; */
+     display: flex;
+     /* justify-content: space-between; */
+     align-items: center;
+     color: black;
+     background-color: white;
+     border-radius: 10px;
+     cursor: pointer;
+    
+ }
+ .line table tr td{
+    width: 15rem;
+    display: flex;
+    justify-content: center;
+ }
+ .large{
+    transform: scale(2);
+    margin-left: -3rem;
+    accent-color: red;
+    
+}
+.space{
+    margin-top: 3rem;
+}
+.profileimage,.bb{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.profileimage img{
+    width: 250px;
+    height: 250px;  
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.bb button{
+    background-color: rgb(61, 97, 230);
+    font-size: 1.2rem;
     border: none;
+    border-radius: 5px;
+    padding: .5em .5em;
+}
+.placeorder{
+    display: flex;
+    justify-content: center;
+}
+.placeorder button{
+    font-size: 1.5rem;
+    padding: 1rem 1.4rem;
+    background-color: rgb(215, 172, 53);
+    border-radius: 20px ;
+    border: none;
+    transition: .4s;
+}
+.placeorder button:hover{
+  background-color: rgb(228, 174, 24);
 }

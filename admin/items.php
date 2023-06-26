@@ -1,14 +1,16 @@
 <?php
  include_once 'partial/header.php';
  include_once 'include/dbh.inc.php';
+ error_reporting(E_ERROR | E_PARSE);
  $_SESSION['table'] = $_POST["color"];
 //  $color=$_SESSION['table'];
  if ($_SESSION['table'] == ""){
    $_SESSION['table'] = "veg_items";
   }
-  echo $_SESSION['table'];
+  
+  // echo $_SESSION['table']; 
   $query= 'select * from '.$_SESSION['table'];
-  echo $query;
+  // echo $query;
   $result = mysqli_query($con, $query);
 ?>
 
@@ -47,7 +49,7 @@
                 <p><?php echo $row['id']; ?></p>
         </td>
             <td >
-            <img src=<?php echo "../admin/image/".$row['image']; ?> alt="" height="70px">
+            <img src=<?php echo "../admin/itemimages/".$row['image']; ?> alt="" height="70px">
           </td>
             <td >
             <p><?php echo $row['name']; ?></p>
@@ -62,7 +64,7 @@
         </td>
               </tr>  
             </table>
-        </div>
+        </div> 
         <?php
         }
         ?>
@@ -70,7 +72,7 @@
       </main>
 
       <div class="buttons">
-          <a href="include/new.php"><button class="button_add" >add new item</button></a>
+          <a href="include/newitem.php"><button class="button_add" >add new item</button></a>
         </div>
   <?php
   if (isset($_GET["error"])){

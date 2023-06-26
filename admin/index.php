@@ -10,7 +10,7 @@
 <body>
     <div class="title">
         <img src="image/catering.png" alt="">
-        <p>Food in Motion</p>
+        <p>Delight Bookings</p>
  </div>
 <div class="wrapper">
 

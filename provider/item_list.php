@@ -38,7 +38,7 @@
                   <table>
                   <tr>
                 <td >
-                 <img src=<?php echo "../admin/image/".$row['image']; ?> alt="" height="70px">        
+                 <img src=<?php echo "../admin/itemimages/".$row['image']; ?> alt="" height="70px">        
             </td>
                 <td >
                 <p><?php echo strtoupper($row['name']); ?></p>

@@ -6,6 +6,7 @@ const icon_close= document.querySelector('.icon-close');
 const user_link= document.querySelector('.userlink');
 const vendor_link= document.querySelector('.vendorlink');
 
+
 register_link.addEventListener('click',()=>{
     wrapper.classList.add('active');
 });
@@ -24,3 +25,12 @@ vendor_link.addEventListener('click',()=>{
 user_link.addEventListener('click',()=>{
     wrapper.classList.remove('vendor');
 });
+const book= document.getElementById('book');
+book.addEventListener('click',()=>{
+    wrapper.classList.add('active-pop');
+});
+
+function submitForms(){
+    document.getElementById("form1").submit();
+    document.getElementById("form").submit();
+}

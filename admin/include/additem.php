@@ -8,7 +8,7 @@ if (isset($_POST["submit"])){
   // echo $name;
   require_once 'dbh.inc.php';
   require_once 'functions.inc.php';
-move_uploaded_file($_FILES['image']['tmp_name'],'../image/'.$_FILES['image']['name']);
+move_uploaded_file($_FILES['image']['tmp_name'],'../itemimages/'.$_FILES['image']['name']);
 // if($a)
 // echo 'file uploaded'; 
 // $img='foods_iamge/'.$image;

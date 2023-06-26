@@ -1,5 +1,8 @@
 <?php
  include_once 'partial/header.php';
+ include_once 'include/dbh.inc.php';
+ $query= 'select * from events limit 3';
+$result = mysqli_query($con, $query);
 ?>
    
    <div class="main">
@@ -16,20 +19,30 @@
     ?>
     <div class="search">
         <span><ion-icon name="search-outline"></ion-icon></span>
-        <input type="text" placeholder="Search for provider, events">
+        <input type="search" placeholder="Search for provider, events">
         <button type="submit"> search</button>
     </div>
     <!-- hello user <br> -->
     </div>
     <p>Trending Events</p>
-    <div class="events">
-        <?php
-        $event=array("wedding","birthday","mehendi","gggg","aaaa","thr");
-        for($i=0;$i<6;$i++){
-           echo "<a href='provider.php'><p>$event[$i]</p></a>";
-        }
-        ?>
+    <div class="collection">
+<?php
+while($row= mysqli_fetch_assoc($result)){
+?>
+<div class="provider b">
+<div class="img a">
+     <img src="../admin/eventimages/<?php echo $row['image']; ?>" alt="<?php echo $row['image']; ?>">
+     <div class="eventname">
+     <?php echo $row['name']; ?>
+     </div>
     </div>
+</div>
+
+
+<?php
+}
+?>
+</div>
   </div>
   <?php
   include_once 'partial/footer.php';

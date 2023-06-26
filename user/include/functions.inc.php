@@ -87,3 +87,18 @@ function feedback($con,$name,$msg){
     header("location: ../contact_us.php?error=nothing");
     exit();
 }
+function addprofile($con,$image){
+    session_start();
+    $sql= "UPDATE signup SET image=? where usr_id=".$_SESSION['userid'].";";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../items.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$image);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../profile.php?error=none");
+    exit();
+}

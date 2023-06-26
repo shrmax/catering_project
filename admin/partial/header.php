@@ -22,12 +22,12 @@ session_start();
     <div class="container">
         <!--navigation -->
         <nav >
-           <a href="adminindex.php"><img src="image/catering.png" class="logo"></a>
+           <a href="adminindex.php"><img src="itemimages/catering.png" class="logo"></a>
             <ul>
                 <li><a href='adminindex.php'>Home</a></li>
                 <li><a href='items.php'>Manage Items</a></li>
                 <li><a href="providers.php">Manage Provider</a></li>
-                <li><a href="users.php">Manage Users</a></li>
+                <li><a href="events.php">Manage Events</a></li>
                 <li><a href="#">Orders</a></li>
                 <li><a href="feedback.php">User Feedbacks</a></li>
                 <li><a href="include/logout.inc.php">Logout</a></li>
