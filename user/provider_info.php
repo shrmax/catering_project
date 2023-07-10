@@ -85,9 +85,9 @@ while($row =mysqli_fetch_assoc($result)){
                         <?php
                          $sql='select image from workimage where provider_id='.$_GET['entry_id'].';';
                          $result=mysqli_query($con,$sql);
-                         while($row =mysqli_fetch_assoc($result)){
+                         while($r =mysqli_fetch_assoc($result)){
                         ?>
-                        <img src="../provider/workimage/<?php echo $row['image'] ?>" alt="" class="lkd">
+                        <img src="../provider/workimage/<?php echo $r['image'] ?>" alt="" class="lkd">
                         <?php
                         
                         }
@@ -96,7 +96,7 @@ while($row =mysqli_fetch_assoc($result)){
                 </div>
                 <div class="about" id="about">
                     <h1>About</h1>
-                   <pre> Having 20 years of experience, Jainco Caterers enjoy the rare distinction of being an all in one organizer for all types of functions that their clients could think of hosting. Be it birthdays or weddings their skilled team can easily manage all aspects of these functions from the beginning till the very end. They will make your special event memorable not only for you but, for every one of your guests. Their exquisite & innovative food, spectacular presentation & unfailing service has enabled Jainco Caterers to create a seamless match in New Delhi & other cities. They provide only a Vegetarian menu. </pre>
+                   <pre> Having 20 years of experience, <?php echo $row['name']; ?> enjoy the rare distinction of being an all in one organizer for all types of functions that their clients could think of hosting. Be it birthdays or weddings their skilled team can easily manage all aspects of these functions from the beginning till the very end. They will make your special event memorable not only for you but, for every one of your guests. Their exquisite & innovative food, spectacular presentation & unfailing service has enabled <?php echo $row['name']; ?> to create a seamless match in Mangalore and Udupi.  </pre>
                 </div>
  </div>
 <?php

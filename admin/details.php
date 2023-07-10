@@ -11,9 +11,10 @@ while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
     <div class="eves">
     
     <p id="event"><?php echo $row[21] ?></p>   
-                <p id="provider"><?php echo $row[14] ?></p>
+                <p id="provider"><?php echo $row[18] ?></p>
+                <p id="amont"><?php echo $row[14] ?></p>
                 <p id="amont">Phone Number :<span><?php echo $row[15] ?></span></p>
-                <p id="amont">Email :<span><?php echo $row[15] ?></span></p>
+                <p id="amont">Email :<span><?php echo $row[16] ?></span></p>
                 <p id="amont">Alternative Phone Number :<span><?php echo $row[4] ?></span></p>
                 <p id="amont">Total People :<span><?php echo $row[2] ?></span></p>
                 <p id="amont">Event Date :<span><?php echo $row[5] ?></span></p>

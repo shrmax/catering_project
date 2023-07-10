@@ -7,20 +7,20 @@ include_once 'partial/header.php';
     <form action="include/updateprice.php" method="post">
                 <div class="formdata" >
                 <label for="">Veg Price </label>
-                    :   <input type="number" name="vegp" required>
+                    :   <input type="number" name="vegp" >
                     </div>
                 <div class="formdata" >
                 <label for="">Non Veg Price </label>
                     :   <input type="number" name="nonvegp"
-                    min="8" required>
+                     >
                     </div>
                 <div class="formdata" >
                 <label for="">Minimum nubmer of People</label>
-                    :   <input type="number" name="min" min="8" required>
+                    :   <input type="number" name="min"  >
                     </div>
                 <div class="formdata" >
                 <label for="">Maximum nubmer of People</label>
-                    :   <input type="number" name="max" min="8" required>
+                    :   <input type="number" name="max"  >
                     </div>
                 
                     <div class="bb">

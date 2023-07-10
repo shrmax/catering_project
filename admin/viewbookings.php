@@ -18,6 +18,7 @@
             <div class="eves">
                 <p id="event"><?php echo $row[18] ?></p>   
                 <p id="provider"><?php echo $row[16] ?></p>
+                <p id="amont"><?php echo $row[14] ?></p>
                 <p id="amont">Total People :<span><?php echo $row[2] ?></span></p>
                 <p id="amont">Event Date :<span><?php echo $row[5] ?></span></p>
                 <p id="amont">Total Amount :<span>&#8377;<?php echo $row[12] ?></span></p>
