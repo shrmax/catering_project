@@ -5,16 +5,17 @@
     box-sizing: border-box;
 }
 body{
-    background: rgb(14, 14, 14);
+    background: rgb(24, 24, 27);
     color:papayawhip;
 
 }
 header{
     width: 100%;
+    margin-bottom: 3rem;
 }
 .container{
     padding: 10px 3%;
-
+    background: rgb(91, 41, 91);
 }
 .logo{
     width: 90px;
@@ -458,4 +459,198 @@ nav ul li a:hover::after{
     width: 70px;
     color: green;
     border-radius: 1rem;
+}
+.order section, #order_form{
+    border: 2px solid white;
+    width: 90%;
+    /* height: ; */
+    margin: auto;
+    border-radius: 20px;
+}
+.formdata{
+    display: flex;
+    padding: 2rem 0;
+
+}
+.formdata label{
+   margin-left: 15%;
+   width: 20%; 
+   font-size: 1.2rem;
+
+}
+.formdata input,.formdata p{
+ background: transparent;
+ border: none;
+ outline: none;
+ color: wheat;
+ margin-left: 1rem;
+ font-size: 1.2rem;
+ border-bottom: 2px solid white;
+ width: 50%;
+}
+.profileimage,.bb{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.profileimage img{
+    width: 250px;
+    height: 250px;  
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.bb button{
+    background-color: rgb(61, 97, 230);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: .5em .5em;
+    min-width: 100px;
+} 
+
+.requirements{
+    display: flex;
+    justify-content: space-evenly;  
+}
+.requirements label{
+    width: 250px;
+}
+.bo{
+    border-top: 2px solid white;
+}
+.pimages{
+
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: .5em; 
+    /* margin: 1em 0; */
+    padding: 1em 1em;
+    border: 2px solid wheat;
+    border-radius: 20px;
+    background-color: white;
+}
+.lkd{
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid red; */
+    
+}
+.bb button{
+    background-color: rgb(61, 97, 230);
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    padding: .5em .5em;
+}
+.placeorder{
+    display: flex;
+    justify-content: center;
+}
+.placeorder button{
+    font-size: 1.5rem;
+    padding: 1rem 1.4rem;
+    background-color: rgb(215, 172, 53);
+    border-radius: 20px ;
+    border: none;
+    transition: .4s;
+}
+.placeorder button:hover{
+  background-color: rgb(228, 174, 24);
+}
+
+.invoice{
+    display: flex;
+}
+.invoice label{
+   
+    margin: .5rem 2rem;
+}
+.qw{
+    width: 15rem;
+    
+}
+.uu{
+    width: 14em;
+    /* white-space: pre-wrap; 
+    word-wrap: break-word; */
+}
+.cc{
+    
+ justify-content: center;
+ border-bottom: 2px solid white;
+ border-top: 2px solid white;
+ font-size: 1.4rem ;
+ color: #DB005B;
+
+}
+.total{
+    font-size: 1.2rem ; 
+    border-top: 2px solid white;
+}
+.grand{
+    background-color: #3F0071;
+    font-size: 1.5rem;
+}
+
+.bookings{
+    display: flex;
+    justify-content: flex-start;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 20rem; */
+    
+}
+.buttons button{
+    padding: 10px 5px;
+    margin: 2rem;
+    width: 10rem;
+}
+.eves{
+    width: 300px;
+}
+.eves p{
+    padding: 7px;
+}
+ #event{
+    color: #DB005B;
+    font-size: 2.3rem;
+    text-transform: uppercase; 
+
+}
+ #provider{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+ #amont{
+    color: black;
+    font-size: 1.1rem;
+}
+#status{
+    text-transform:uppercase;
+    background-color: #02645f;
+    text-align: center;
+}
+.eves span{
+    font-weight: 600;
+}
+.orderinfo{
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    background-color: white;
+}
+.c{
+    flex-direction: row;
+    margin-left: 0;
+}
+.cat{
+    color: #FB2576;
+    font-size: 2.4rem;
+    padding-left: 2rem;
 }

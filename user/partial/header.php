@@ -20,13 +20,19 @@ session_start();
            <a href="index.php"><img src="image/catering.png" class="logo"></a>
             <ul>
                 <li><a href='index.php'>Home</a></li>
-                <li><a href="online_booking.php">Online catering booking</a></li>
-                <li><a href="#">My Bookings</a></li>
+                <li><a href="online_booking.php"> Catering booking</a></li>
+                <?php
+                 if (isset($_SESSION["userid"]))
+                 echo ' <li><a href="mybookings.php">My Bookings</a></li>';
+                 else
+                 echo ' <li><a href="#">My Bookings</a></li>';
+                ?>
+               
                 <li><a href="contact_us.php">Contact Us</a></li>
                 <li><a href="#"></a></li>
                 <?php
                 if (isset($_SESSION["userid"])){
-                    include_once 'partial/header.php';
+                    
 include_once 'include/dbh.inc.php';
 $sql='select * from signup where usr_id='.$_SESSION['userid'].';';
 $result= mysqli_query($con,$sql);
@@ -50,7 +56,7 @@ $result= mysqli_query($con,$sql);
         <div class="box_login">
                 <div class="clients">
                 <span ><a href="#" >user</a></span>
-                <span class=vendorlink><a href="#" >vendor</a></span>
+                <span class=vendorlink><a href="#" >provider</a></span>
             </div>
             <h2>user Login</h2>
             <form action="include/login.inc.php" method="post">
@@ -98,7 +104,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                     </span>
-                    <input type="text" name="name" id="rname" minlength="3"  required >
+                    <input type="text" name="name" id="rname" minlength="3" pattern="^[A-Za-z]{3}.*$" required>  
                     <label for="">name</label>
                 </div>
                 <!-- Phone no -->
@@ -122,7 +128,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="text" name="psw" id="psw" required>
+                    <input type="text" name="psw" id="psw"  minlength="8" required>
                     <label for="">password</label>
                 </div>
                 <!-- repeat password -->
@@ -148,18 +154,19 @@ $result= mysqli_query($con,$sql);
                     else if ($_GET["error"]== "none"){
                             echo "<script>alert('You registered successfully.')</script>";
                     }
+                   
                 
                 }
                 ?>
             </form>
         </div>
-         <!-- vendor login page -->
+         <!-- provider login page -->
          <div class="vendor_login">
                 <div class="clients">
                 <span class=userlink><a href="#" >user</a></span>
-                <span ><a href="#" >vendor</a></span>
+                <span ><a href="#" >provider</a></span>
             </div>
-            <h2>Vendor Login</h2>
+            <h2>Provider Login</h2>
             <form action="../provider/include/login.inc.php" method="post">
                <!-- name -->
                <div class="inputbox">
@@ -185,4 +192,11 @@ $result= mysqli_query($con,$sql);
                 </div> -->
             </form>
         </div>
+        <?php
+                if (isset($_GET["error"])){
+                    if ($_GET["error"]== "blocked"){
+                        echo "<script>alert('You have been blocked by the admin.')</script>";
+                    }
+                }
+                ?>
    </div>

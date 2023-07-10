@@ -1,8 +1,8 @@
 <?php
  include_once 'partial/header.php';
  include_once 'include/dbh.inc.php';
- 
-  echo $_SESSION['table'];
+//  error_reporting(E_ERROR | E_PARSE);
+  // echo $_SESSION['table'];
   $query= 'select * from '.$_SESSION['table'];
 
   $result = mysqli_query($con, $query);

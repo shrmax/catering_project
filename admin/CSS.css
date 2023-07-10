@@ -11,9 +11,12 @@ body{
 }
 header{
     width: 100%;
+    margin-bottom: 2rem;
 }
 .container{
     padding: 10px 3%;
+    background: rgb(91, 41, 91);
+    
 
 }
 .logo{
@@ -328,7 +331,7 @@ main{
     background-color: greenyellow;
     border: none;
     height: 40px;
-    width: 70px;
+    padding: 3px;
     border-radius: 10px;
     margin: 0 30px;
     cursor: pointer;
@@ -339,7 +342,7 @@ main{
     background-color: red;
     border: none;
     height: 40px;
-    width: 70px;
+    padding: 3px;
     border-radius: 10px;
     margin: 0 30px;
     cursor: pointer;
@@ -347,9 +350,13 @@ main{
 /* feedbacks */
 .username{
     position: relative;
-    margin-left: 90%;
+    display: flex;
+    margin-left: 70%;
     margin-top: -1%;
     padding-bottom: 4%;
+}
+.username .date{
+    padding-left: 70%;
 }
 .message{
     position: fixed;
@@ -454,9 +461,136 @@ main{
     background-color: red;
     border: 2px solid black;
     height: 35px;
-    width: 70px;
+        width: 90px;
     border-radius: 10px;
     margin-left: 10rem;
     cursor: pointer;
 }
-  
+.numbers{
+    display: flex;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 0 2rem;
+    /* width: 20rem; */
+    background-color: black;
+}
+.numbers p{
+    color: white;
+}
+.payment-method{
+    width: fit-content;
+    overflow: hidden;
+    color: black;
+}
+.card{
+    color: black;
+}
+.uu{
+   background-color: rgba(215, 215, 26, 0.495);
+}
+.placeorder{
+    display: flex;
+    justify-content: center;
+}
+.placeorder button{
+    font-size: 1.5rem;
+    padding: 1rem 1.4rem;
+    background-color: rgb(215, 172, 53);
+    border-radius: 20px ;
+    border: none;
+    transition: .4s;
+}
+.placeorder button:hover{
+  background-color: rgb(228, 174, 24);
+}
+
+.invoice{
+    display: flex;
+}
+.invoice label{
+   
+    margin: .5rem 2rem;
+}
+.qw{
+    width: 15rem;
+    
+}
+
+.cc{
+    
+ justify-content: center;
+ border-bottom: 2px solid white;
+ border-top: 2px solid white;
+ font-size: 1.4rem ;
+ color: #DB005B;
+
+}
+.total{
+    font-size: 1.2rem ; 
+    border-top: 2px solid white;
+}
+.grand{
+    background-color: #3F0071;
+    font-size: 1.5rem;
+}
+
+.bookings{
+    display: flex;
+    justify-content: flex-start;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 20rem; */
+    
+}
+.buttons button{
+    padding: 10px 5px;
+    margin: 2rem;
+    width: 10rem;
+}
+.eves{
+    width: 440px;
+}
+.eves p{
+    padding: 7px;
+}
+ #event{
+    color: #DB005B;
+    font-size: 2.3rem;
+    text-transform: uppercase; 
+
+}
+ #provider{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+ #amont{
+    color: black;
+    font-size: 1.1rem;
+}
+#status{
+    text-transform:uppercase;
+    background-color: #02645f;
+    text-align: center;
+}
+.eves span{
+    font-weight: 600;
+}
+.orderinfo{
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    background-color: white;
+}
+.c{
+    flex-direction: row;
+    margin-left: 0;
+}
+.cat{
+    color: #FB2576;
+    font-size: 2.4rem;
+    padding-left: 2rem;
+}

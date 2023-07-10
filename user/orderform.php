@@ -1,6 +1,14 @@
 <?php
 include_once 'partial/header.php';
 include_once 'include/dbh.inc.php';
+$sql='select name from events where id='.$_GET['event_id'].';';
+$result=mysqli_query($con,$sql);
+$row =mysqli_fetch_assoc($result);
+$_SESSION['eventname'] =$row['name'];
+$_SESSION['eventid'] =$_GET['event_id'];
+
+
+
 ?>  
 <form action="confirmorder.php" method="post" id="form">
         <!-- order form -->
@@ -16,7 +24,7 @@ include_once 'include/dbh.inc.php';
                 <div class="formdata">
                     
                     <label for="">Date*</label>
-                    :<input type="date" name="date" id="date"  required  >
+                    :<input type="date"  min="<?= date('Y-m-d'); ?>" name="date" id="date"  required  >
                 </div>
                 <!-- email -->
                 <div class="formdata">
@@ -39,6 +47,11 @@ include_once 'include/dbh.inc.php';
                    
                     <label for="">Email</label>
                     :<input type="email" name="email" id="email" >
+                </div>
+                <div class="formdata">
+                   
+                     <label for="">Special Request</label>
+                    :<input type="text" name="request" id="email" >
                 </div>
                 <!-- repeat password -->
                 <!-- <div class="inputbox">
@@ -78,7 +91,7 @@ include_once 'include/dbh.inc.php';
         <?php
    $array=array('juice_items','veg_items','non_veg_items','deserts_items');
             foreach($array as $j){
-                $query= 'select a.image, a.name, a.description, p.price, p.id from '.$j.' a join providers_'.$j.' p on p.item_id=a.id where p.providers_id='.$_SESSION['pid'].';';
+                $query= 'select a.image, a.name, a.description, p.price, p.id, p.item_id from '.$j.' a join providers_'.$j.' p on p.item_id=a.id where p.providers_id='.$_SESSION['pid'].';';
                 $result = mysqli_query($con, $query);
                 if(mysqli_num_rows($result)>0){
                     
@@ -120,7 +133,7 @@ include_once 'include/dbh.inc.php';
               <p><?php echo $row['price']; ?></p>
         </td>
               <td>
-                <input type="checkbox" class="large" name="<?php echo $j; ?>[]" value="<?php echo $row['id']; ?>" >
+                <input type="checkbox" class="large" name="<?php echo $j; ?>[]" value="<?php echo $row['item_id']; ?>" >
               </td>
             </tr>  
           </table>

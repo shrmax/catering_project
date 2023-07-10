@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST["submit"])){ 
 $image = $_FILES['image']['name'];
 require_once 'dbh.inc.php';

@@ -1,4 +1,14 @@
 <?php
+function pwdmatch($pwd,$repeat_pwd){
+    // $result;
+    if($pwd !== $repeat_pwd){
+        $result=true;
+    }
+    else{
+        $result=false;
+    }
+    return $result;
+}
 function nameexist($con,$name,$email){
     $sql= "SELECT * FROM providers  WHERE name=? OR  email=?;";
     $stmt= mysqli_stmt_init($con);
@@ -76,5 +86,81 @@ function remove($con, $id){
     // mysqli_query($con,$sql);
 
     header("location: ../manage_items.php?error=delete");
+    exit();
+}
+function addprofile($con,$image){
+    $sql= "UPDATE providers SET image=? where id=".$_SESSION['providerid'].";";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../items.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$image);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../profile.php?error=added");
+    exit();
+}
+function updatepsw($con,$oldpsw,$newpsw,$user){
+    $nameexists= nameexist($con,$user,$user);
+    $pswhashed=$nameexists['password'];
+   $checkpsw=password_verify($oldpsw,$pswhashed);
+   if ($checkpsw==true){
+    $hashedpsw=password_hash($newpsw,PASSWORD_DEFAULT);
+    $sql= "UPDATE providers SET password=? where id=".$_SESSION['providerid'].";";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../items.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$hashedpsw);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../profile.php?error=newpsw");
+    exit();
+   }
+   else
+   header("location: ../changepsw.php?error=dmatch");
+}
+function workimage($con,$file){
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    $sql= "INSERT INTO workimage (provider_id,image,date) VALUES (?,?,?);";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location: ../profile.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"sss",$_SESSION['providerid'],$file,date("Y/m/d"));
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+function edit($con,$veg,$nonv,$min,$max){
+    $sql= "UPDATE providers SET veg_price=?,non_veg_price=?,min=?,max=? where id=".$_SESSION['providerid'].";";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../items.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"ssss",$veg,$nonv,$min,$max);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../profile.php?error=edited");
+    exit();
+}
+function statusupdate($con,$id,$status){
+    $sql= "UPDATE orders SET status=? where order_id=".$id.";";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../mybookings.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$status);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../manage_orders.php?canceled");
     exit();
 }

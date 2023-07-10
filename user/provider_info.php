@@ -1,25 +1,29 @@
 
 <?php
 include_once 'partial/header.php';
+include_once 'include/dbh.inc.php';
 $_SESSION['pid']=$_GET['entry_id'];
+$sql='select * from providers where id='.$_GET['entry_id'].';';
+$result=mysqli_query($con,$sql);
+while($row =mysqli_fetch_assoc($result)){
 ?>
 <div class="providerinfo">
     <div class="leftpane" id="leftpane">
         <div class="grp">
             
-            <img src="image/maxresdefault.jpg" alt="" class="tt">
+            <img src="../provider/providerprofile/<?php echo $row['image']; ?>" alt="" class="tt">
             <div class="pinfo">
-            <p class="pname ">aadhya caterers</p>
+            <p class="pname "><?php echo $row['name']; ?></p>
                 <p class="location ">
             <span>
                 <ion-icon name="location-outline"></ion-icon>
-            </span>gurupura road mangalore 575110 Karnataka</p>
+            </span><?php echo $row['address']; ?></p>
             <div class="r">
-            <label for="">Owner :</label><p class="owner qq">viajy malua</p></div>
+            <label for="">Owner :</label><p class="owner qq"><?php echo $row['owner_name']; ?></p></div>
             <div class="r">
-            <label for="">Contact Number :</label><p class="qq">9866458456</p></div>
+            <label for="">Contact Number :</label><p class="qq"><?php echo $row['phone_no']; ?></p></div>
             <div class="r">
-            <label for="">Email :</label><p class="qq">asdkrd@djeedj.com</p></div>
+            <label for="">Email :</label><p class="qq"><?php echo $row['email']; ?></p></div>
             </div>
         </div>
     </div>
@@ -31,16 +35,16 @@ $_SESSION['pid']=$_GET['entry_id'];
                     <p >Staring Plate Non Veg </p>
                </div>
                 <div class="priceinfo">
-                    <p  style="color: #e80a54;"> &#8377;600</p>
-                    <p  style="color: #e80a54;">&#8377;800 </p>
+                    <p  style="color: #e80a54;"> &#8377;<?php echo $row['veg_price']; ?></p>
+                    <p  style="color: #e80a54;">&#8377;<?php echo $row['non_veg_price']; ?> </p>
                </div>
                 <div class="priceinfo">
                 <p>Min Capacity </p>
                <p >Max Capacity </p>
                </div>
                 <div class="priceinfo">
-                <p style="color: #e80a54;"> 40 </p>
-               <p  style="color: #e80a54;"> 2000 </p>
+                <p style="color: #e80a54;"> <?php echo $row['min']; ?> </p>
+               <p  style="color: #e80a54;"> <?php echo $row['max']; ?> </p>
                </div>
               
             </div>
@@ -70,38 +74,32 @@ $_SESSION['pid']=$_GET['entry_id'];
 </div>
 <div class="imageabout">
                 <div class="imga">
+                    <a href="#leftpane">Main</a>
                     <a href="#pimages">Image</a>
                     <a href="#about">About</a>
-                    <a href="#leftpane">Main</a>
                 </div>
                 <div id="pimages">
                     <h1 >Images</h1>
                     <div class="pimages">
 
                         <?php
-                        $i=0;
-                        while($i<7){ 
+                         $sql='select image from workimage where provider_id='.$_GET['entry_id'].';';
+                         $result=mysqli_query($con,$sql);
+                         while($row =mysqli_fetch_assoc($result)){
                         ?>
-                        <img src="image/logo.png" alt="" class="lkd">
+                        <img src="../provider/workimage/<?php echo $row['image'] ?>" alt="" class="lkd">
                         <?php
-                        $i++;
+                        
                         }
                         ?>
                     </div>
                 </div>
                 <div class="about" id="about">
                     <h1>About</h1>
-                   <pre> What is grid layout?
-
-A grid is a collection of horizontal and vertical lines creating a pattern against which we can line up our design elements. They help us to create layouts in which our elements won't jump around or change width as we move from page to page, providing greater consistency on our websites.
-
-A grid will typically have columns, rows, and then gaps between each row and column. The gaps are commonly referred to as gutters.Creating your grid in CSS
-
-Having decided on the grid that your design needs, you can use CSS Grid Layout to create it. We'll look at the basic features of Grid Layout first and then explore how to create a simple grid system for your project.
-
-The following video provides a nice visual explanation of using CSS Grid:</pre>
+                   <pre> Having 20 years of experience, Jainco Caterers enjoy the rare distinction of being an all in one organizer for all types of functions that their clients could think of hosting. Be it birthdays or weddings their skilled team can easily manage all aspects of these functions from the beginning till the very end. They will make your special event memorable not only for you but, for every one of your guests. Their exquisite & innovative food, spectacular presentation & unfailing service has enabled Jainco Caterers to create a seamless match in New Delhi & other cities. They provide only a Vegetarian menu. </pre>
                 </div>
  </div>
 <?php
+}
 include_once 'partial/footer.php';
 ?>

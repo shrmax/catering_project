@@ -36,7 +36,7 @@ $result= mysqli_query($con,$sql);
                     : <p><?php echo $row['email']; ?></p>
                 </div>
                 <div class="bb">
-                    <button>change password</button>
+                <a href="changepsw.php"><button>change password</button></a>
                     </div>
                 <div class="bb">
                     <a href='include/logout.inc.php'><button>logout</button></a>
@@ -57,10 +57,10 @@ $result= mysqli_query($con,$sql);
                     if ($_GET["error"]== "emptyinput"){
                         echo "<script>alert('fill all the fields.')</script>";
                     }
-                    else if ($_GET["error"]== "namehastaken"){
-                        echo "<script>alert('name is already taken or user with given email already exist.')</script>";
+                    else if ($_GET["error"]== "newpsw"){
+                        echo "<script>alert('new password is set successfully.')</script>";
                     }
-                    else if ($_GET["error"]== "none"){
+                    else if ($_GET["error"]== "added"){
                             echo "<script>alert('image changed succesfully.')</script>";
                     }
                 

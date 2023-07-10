@@ -11,11 +11,11 @@ body{
 }
 header{
     width: 100%;
+    margin-bottom: 3rem;
 }
 .container{
-    /* background: rgb(194, 128, 194); */
+    background: rgb(91, 41, 91);
     padding: 10px 3%;
-
 }
 .logo{
     width: 90px;
@@ -683,6 +683,7 @@ color: aqua;
 .eves{
     margin-top: 2rem;
     margin-left: 2rem;
+    width: 400px;
 }
 .buttoneves{
     background-color: transparent;
@@ -717,6 +718,7 @@ color: aqua;
     width: 90%;
     margin: auto;
     border-radius: 20px;
+    overflow: hidden;
 }
 .formdata{
     display: flex;
@@ -839,4 +841,91 @@ color: aqua;
 }
 .placeorder button:hover{
   background-color: rgb(228, 174, 24);
+}
+
+.invoice{
+    display: flex;
+}
+.invoice label{
+   
+    margin: .5rem 2rem;
+}
+.qw{
+    width: 15rem;
+    
+}
+.uu{
+    width: 14em;
+    /* white-space: pre-wrap; 
+    word-wrap: break-word; */
+}
+.cc{
+    
+ justify-content: center;
+ border-bottom: 2px solid white;
+ border-top: 2px solid white;
+ font-size: 1.4rem ;
+ color: #DB005B;
+
+}
+.total{
+    font-size: 1.2rem ; 
+    border-top: 2px solid white;
+}
+.grand{
+    background-color: #3F0071;
+    font-size: 1.5rem;
+}
+
+.bookings{
+    display: flex;
+    justify-content: flex-start;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rem;
+    
+}
+.buttons button{
+    padding: 10px 5px;
+    margin: 2rem;
+    width: 10rem;
+}
+.eves p{
+    padding: 7px;
+}
+ #event{
+    color: #DB005B;
+    font-size: 2.3rem;
+    text-transform: uppercase; 
+
+}
+ #provider{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+ #amont{
+    color: black;
+    font-size: 1.1rem;
+}
+#status{
+    text-transform:uppercase;
+    background-color: #02645f;
+    text-align: center;
+}
+.eves span{
+    font-weight: 600;
+}
+.orderinfo{
+    width: 90%;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    background-color: white;
+}
+.c{
+    flex-direction: row;
+    margin-left: 0;
 }

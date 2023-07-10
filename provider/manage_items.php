@@ -1,12 +1,13 @@
 <?php
  include_once 'partial/header.php';
  include_once 'include/dbh.inc.php';
+ error_reporting(E_ERROR | E_PARSE);
  $_SESSION['table'] = $_POST["color"];
  if ($_SESSION['table'] == ""){
    $_SESSION['table'] = "veg_items";
   }
   $provider='providers_'.$_SESSION['table'];
-  echo $provider.'<br>';
+  // echo $provider.'<br>';
 ?>
 
    <form action="manage_items.php" method="post" id=form> 

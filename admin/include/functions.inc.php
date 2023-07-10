@@ -88,7 +88,7 @@ function createProvider($con,$name,$owner,$phone_no,$email,$address,$pwd){
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: insert.php?error=none");
+    header("location: ../providers.php?error=none");
     exit();
 }
 
@@ -133,5 +133,37 @@ function remove($con, $id){
     // mysqli_query($con,$sql);
 
     header("location: ../items.php?error=delete");
+    exit();
+}
+
+function removeprovider($con, $id){
+    $sql= "DELETE FROM providers where id=?;";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../items.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$id);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    // mysqli_query($con,$sql);
+
+    header("location: ../providers.php?error=delete");
+    exit();
+}
+function block($con, $id){
+    $sql= "update signup set status='blocked' where usr_id=".$id.";";
+    $stmt=mysqli_query($con,$sql);
+  
+
+    header("location: ../users.php?error=blocked");
+    exit();
+}
+function unblock($con, $id){
+    $sql= "update signup set status=NULL where usr_id=".$id.";";
+    $stmt=mysqli_query($con,$sql);
+  
+
+    header("location: ../users.php?error=unblocked");
     exit();
 }

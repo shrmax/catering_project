@@ -6,12 +6,7 @@ $email=$_POST["email"];
 $phone_no=$_POST["phone_no"];
 $address=$_POST["address"];
 $pwd=$_POST['psw'];
-// echo $name;
-// echo $owner;
-// echo $email;
-// echo $phone_no;
-// echo $address;
-// echo $pwd;
+
 require_once 'dbh.inc.php';
 require_once 'functions.inc.php';
 if (providerexist($con,$owner,$email)!== false){

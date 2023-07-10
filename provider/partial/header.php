@@ -27,7 +27,7 @@ session_start();
                 <li><a href='index.php'>Home</a></li>
                 <li><a href="manage_items.php">Manage Items</a></li>
                 <li><a href="manage_orders.php">Manage Orders</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="profile.php">Profile</a></li>
                 <li><a href="include/logout.inc.php">Logout</a></li>
         
                 <!-- <li><button class="login-button" >Login</button></li> -->

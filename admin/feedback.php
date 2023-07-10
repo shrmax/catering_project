@@ -13,11 +13,13 @@
             ?> 
             <div class="line feedback">
             <div class="username">
-                <p>-<?php echo $row['name']; ?></p>
+                <p  style="color: gray;"><?php echo $row['date']; ?> </p>
+                <p class="date">-<?php echo $row['name']; ?></p>
             </div>
             <div class="message">
                 <p><?php echo $row['msg']; ?> </p>
             </div>
+
             </div>
             <?php
         }

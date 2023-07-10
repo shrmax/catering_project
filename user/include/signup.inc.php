@@ -17,7 +17,7 @@ if (nameexist($con,$name,$email)!== false){
 }
 createUser($con,$name,$phone_no,$email,$pwd);
 // echo "it works";
-}
+} 
 else{
     header("location: ../index.php?error=emptyinput");
     // echo "<script>alert('empty inputs.')</script>";

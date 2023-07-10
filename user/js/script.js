@@ -34,3 +34,8 @@ function submitForms(){
     document.getElementById("form1").submit();
     document.getElementById("form").submit();
 }
+$( function() {
+    $( "#tutorial_name" ).autocomplete({
+    source: '../include/backend-script.php'  
+    });
+});

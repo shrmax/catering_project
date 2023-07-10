@@ -32,7 +32,7 @@
             <img src=<?php echo "../admin/eventimages/".$row['image']; ?> alt="" height="70px">
             </div>
             <div class="name">
-            <p><?php echo $row['image']; ?></p>
+            <p><?php echo $row['name']; ?></p>
             </div>
         </div>
         <?php

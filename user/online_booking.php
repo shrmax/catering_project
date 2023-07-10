@@ -14,7 +14,7 @@ while($row= mysqli_fetch_assoc($result)){
 <div class="provider">
     <a class="a" href="provider_info.php?entry_id=<?php echo $row['id']; ?>">
     <div class="img">
-     <img src="../provider/image/<?php echo $row['image']; ?>" alt="">
+     <img src="../provider/providerprofile/<?php echo $row['image']; ?>" alt="">
     </div>
     <div class="ptext">
         <p class="pname pa"><?php echo $row['name']; ?></p>
@@ -23,12 +23,12 @@ while($row= mysqli_fetch_assoc($result)){
                 <ion-icon name="location-outline"></ion-icon>
             </span><?php echo $row['address']; ?></p>
         <div class="price pa">
-            <p class="grey">Starting Price</p>
-            <p>&#8377;400 onwards</p>
+            <p class="grey" style="margin-top: 1.4rem;">Starting Price</p>
+            <p>&#8377;<?php echo $row['veg_price']; ?></p>
         </div>
         <div class="ppl pa">
-            <p>Min:50</p>
-            <p>Max:2000</p>
+            <p>Min:<?php echo $row['min']; ?></p>
+            <p>Max:<?php echo $row['max']; ?></p>
         </div>
     </div>
 

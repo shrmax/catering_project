@@ -16,7 +16,7 @@
 
         <!-- register -->
         <div class="box_register">
-            <h2>Register</h2>
+            <h2>Add Provider</h2>
             <form action="signup.inc.php" method="post" id="register_form">
                 <!-- name -->
                 <div class="inputbox">
@@ -67,7 +67,7 @@
                     <label for="">password</label>
                 </div>
                
-                <button type="submit" class="btn" name="submit">Register</button>
+                <button type="submit" class="btn" name="submit">ADD</button>
 
                 <?php
                 if (isset($_GET["error"])){
