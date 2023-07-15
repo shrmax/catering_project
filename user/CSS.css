@@ -7,6 +7,7 @@
 body{
     background: rgb(14, 14, 14);
     color:papayawhip;
+    background-image: "catering.png";
 
 }
 header{
@@ -14,7 +15,7 @@ header{
     margin-bottom: 3rem;
 }
 .container{
-    background: rgb(91, 41, 91);
+    /* background: rgb(42, 14, 42);  */
     padding: 10px 3%;
 }
 .logo{
@@ -759,7 +760,7 @@ color: aqua;
     border-radius: 10px;
  }
  .fields th{
-    width: 14rem;
+    width: 15rem;
  }
  .line{
      margin-bottom: .5rem;
@@ -928,4 +929,7 @@ color: aqua;
 .c{
     flex-direction: row;
     margin-left: 0;
+}
+.line img{
+    mix-blend-mode:darken;
 }

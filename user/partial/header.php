@@ -80,16 +80,17 @@ $result= mysqli_query($con,$sql);
                 <button type="submit" class="btn" name="submit">Login</button>
                 <!-- msg -->
                 <div class="register">
+                    <a href="forgot.php" class="">Forgot Password?</a>
                     <p>Don't have an account? &nbsp;<a href="#" class="register-link">Register</a></p>
                     <p>Are you admin? &nbsp;<a href="../admin/index.php" class="register-link">Admin</a></p>
                 </div>
                 <?php
                 if (isset($_GET["error"])){
                     if ($_GET["error"]== "namedontexist"){
-                        echo "<script>alert('name dont exist.')</script>";
+                        echo "<script>alert('name don't exist.')</script>";
                     }
                     if ($_GET["error"]== "pwddontmatch"){
-                        echo "<script>alert('password dont match.')</script>";
+                        echo "<script>alert('Password doesn't match.')</script>";
                     }
                 }
                 ?>
@@ -104,7 +105,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="person-outline"></ion-icon>
                     </span>
-                    <input type="text" name="name" id="rname" minlength="3" pattern="^[A-Za-z]{3}.*$" required>  
+                    <input type="text" name="name" id="rname" minlength="3" pattern="^[A-Za-z]{3}.*$" title="first 3 letters should be alphabets." required>  
                     <label for="">name</label>
                 </div>
                 <!-- Phone no -->
@@ -112,7 +113,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="call-outline"></ion-icon>
                     </span>
-                    <input type="tel" name="phone_no" id="rphone_no"  required pattern="[6789][0-9]{9}" >
+                    <input type="tel" name="phone_no" id="rphone_no" title="Phone number needs to be in indian format."  required pattern="[6789][0-9]{9}" >
                     <label for="">phone number</label>
                 </div>
                 <!-- email -->
@@ -120,7 +121,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="mail-outline"></ion-icon>
                     </span>
-                    <input type="email" name="email" id="remail"  required  >
+                    <input type="email" name="email" id="remail" title="Enter Your email id."  required  >
                     <label for="">email</label>
                 </div>
                 <!-- password -->
@@ -128,7 +129,7 @@ $result= mysqli_query($con,$sql);
                     <span class="icon">
                     <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="text" name="psw" id="psw"  minlength="8" required>
+                    <input type="text" name="psw" id="psw"  minlength="8" title="Minimum 8 character needed." required>
                     <label for="">password</label>
                 </div>
                 <!-- repeat password -->

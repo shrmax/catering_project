@@ -128,6 +128,21 @@ function updatepsw($con,$oldpsw,$newpsw,$user){
    else
    header("location: ../changepsw.php?error=dmatch");
 }
+function forgotpsw($con,$newpsw,$user){
+    $hashedpsw=password_hash($newpsw,PASSWORD_DEFAULT);
+    $sql= "UPDATE signup SET password=? where name='".$user."';";
+    $stmt= mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+        header("location:../index.php?error=stmtfailed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt,"s",$hashedpsw);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    header("location: ../index.php?error=changed");
+    exit();
+}
 function order($con,$no_ppl,$date,$time,$loc,$phone_no,$email,$juice,$veg,$non_veg,$deserts,$request,$grand,$event,$user,$provider){
     $sql= "INSERT INTO orders (order_date,user_id,provider_id,event_id,number_ppl,address,alternative_phone_no,event_date,time,request,veg_ids,non_veg_ids,juice_ids,desert_ids,grand_total) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt= mysqli_stmt_init($con);
@@ -139,7 +154,7 @@ function order($con,$no_ppl,$date,$time,$loc,$phone_no,$email,$juice,$veg,$non_v
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    header("location: ../mybookings.php?orders");
+    echo '<script> document.location = "mybookings.php?";</script>';
     exit();
 
 }

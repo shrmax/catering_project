@@ -41,12 +41,7 @@ $_SESSION['eventid'] =$_GET['event_id'];
                 <div class="formdata">
                    
                     <label for="">Alternative Phone Number*</label>
-                    :<input type="text" name="phone_no" id="phone_no" required pattern="[6789][0-9]{9}">
-                </div>
-                <div class="formdata">
-                   
-                    <label for="">Email</label>
-                    :<input type="email" name="email" id="email" >
+                    :<input type="text" name="phone_no" id="phone_no" required pattern="[6789][0-9]{9}" title="Enter the number in correct format.">
                 </div>
                 <div class="formdata">
                    

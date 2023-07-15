@@ -3,8 +3,7 @@ include_once 'partial/header.php';
 include_once 'include/dbh.inc.php';
 $query= 'SELECT o.order_id, o.order_date,o.number_ppl,o.address,o.alternative_phone_no,o.event_date,o.time,o.request,o.veg_ids,o.non_veg_ids,o.desert_ids,o.juice_ids,o.grand_total,o.status,s.name,s.phone_no,p.id,p.name,p.image,p.phone_no,e.name,e.image from orders o JOIN signup s on s.usr_id=o.user_id JOIN providers p on p.id=o.provider_id JOIN events e on e.id=o.event_id where s.usr_id='.$_SESSION['userid'].' and o.order_id='.$_POST['details'].';';
 $result = mysqli_query($con, $query);
-$query= 'SELECT or_id from payment;';
-$pay = mysqli_query($con, $query);
+
 while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
 ?>  
 <div class="orderinfo">
@@ -17,6 +16,7 @@ while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
                 <p id="amont">Total People :<span><?php echo $row[2] ?></span></p>
                 <p id="amont">Event Date :<span><?php echo $row[5] ?></span></p>
                 <p id="amont">Address :<span><?php echo $row[3] ?></span></p>
+                <p id="amont">Request :<span><?php echo $row[7] ?></span></p>
                 <p id="amont">Total Amount :<span>&#8377;<?php echo $row[12] ?></span></p>
                 <p id="status">STATUS  :<?php echo $row[13] ?></p>
                 <div class="placeorder buttons c">
@@ -31,7 +31,11 @@ while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
                 ?>
                 <?php 
                 if($row[13]=='accepted') {
+                  $query= 'SELECT or_id from payment where or_id="'.$row[0].'" ;';
+                  $pay = mysqli_query($con, $query);
                   while($r=mysqli_fetch_assoc($pay)){
+                    echo $r['or_id'];
+                    
                       if($row[0]!=$r['or_id']){
               ?>
                <form action="pay.php" method="get">
@@ -41,7 +45,7 @@ while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
               <?php
                   }
                   else
-                  echo '<button>Amount Paid</button>';
+                  echo '<button >Amount Paid</button>';
 
               }}
                 ?>

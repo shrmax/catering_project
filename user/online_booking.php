@@ -17,7 +17,7 @@ while($row= mysqli_fetch_assoc($result)){
      <img src="../provider/providerprofile/<?php echo $row['image']; ?>" alt="">
     </div>
     <div class="ptext">
-        <p class="pname pa"><?php echo $row['name']; ?></p>
+        <p class="pname pa" style="color: orange;"><?php echo $row['name']; ?></p>
         <p class="location grey">
             <span>
                 <ion-icon name="location-outline"></ion-icon>

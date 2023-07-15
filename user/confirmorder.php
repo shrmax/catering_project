@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
 }
 if(isset($_POST['order'])){
     order($con,$_SESSION['ppl'],$_SESSION['date'],$_SESSION['time'],$_SESSION['loc'],$_SESSION['phoneno'],$_SESSION['email'],json_encode($_SESSION['juice']),json_encode($_SESSION['veg']),json_encode($_SESSION['nveg']),json_encode($_SESSION['deserts']),$_SESSION['request'],$_SESSION['grand'],$_SESSION['eventid'],$_SESSION['userid'],$_SESSION['pid']);
-    header("location: mybookings.php");
+
     
 }
 ?>
@@ -78,7 +78,7 @@ if(isset($_POST['order'])){
                 </div>
                 <?php
                 foreach($_SESSION['veg'] as $i){
-                    $query= 'select a.name,  p.price from veg_items a join providers_veg_items p on p.item_id=a.id where p.item_id='.$i.';';
+                    $query= 'select a.name,  p.price from veg_items a join providers_veg_items p on p.item_id=a.id where p.item_id='.$i.' and p.providers_id='.$_SESSION['pid'].';';
                     $result = mysqli_query($con, $query);
                     if(mysqli_num_rows($result)>0){
                         while($row= mysqli_fetch_assoc($result)){
@@ -106,7 +106,7 @@ if(isset($_POST['order'])){
                 </div>
                 <?php
                 foreach($_SESSION['nveg'] as $i){
-                    $query= 'select a.name,  p.price from non_veg_items a join providers_non_veg_items p on p.item_id=a.id where p.item_id='.$i.';';
+                    $query= 'select a.name,  p.price from non_veg_items a join providers_non_veg_items p on p.item_id=a.id where p.item_id='.$i.' and p.providers_id='.$_SESSION['pid'].';';
                     $result = mysqli_query($con, $query);
                     if(mysqli_num_rows($result)>0){
                         while($row= mysqli_fetch_assoc($result)){
@@ -133,7 +133,7 @@ if(isset($_POST['order'])){
                 </div>
                 <?php
                 foreach($_SESSION['juice'] as $i){
-                    $query= 'select a.name,  p.price from juice_items a join providers_juice_items p on p.item_id=a.id where p.item_id='.$i.';';
+                    $query= 'select a.name,  p.price from juice_items a join providers_juice_items p on p.item_id=a.id where p.item_id='.$i.' and p.providers_id='.$_SESSION['pid'].';';
                     $result = mysqli_query($con, $query);
                     if(mysqli_num_rows($result)>0){
                         while($row= mysqli_fetch_assoc($result)){
@@ -160,10 +160,11 @@ if(isset($_POST['order'])){
                 </div>
                 <?php
                 foreach($_SESSION['deserts'] as $i){
-                    $query= 'select a.name,  p.price from deserts_items a join providers_deserts_items p on p.item_id=a.id where p.item_id='.$i.';';
+                    $query= 'select a.name,  p.price from deserts_items a join providers_deserts_items p on p.item_id=a.id where p.item_id='.$i.' and p.providers_id='.$_SESSION['pid'].';';
                     $result = mysqli_query($con, $query);
                     if(mysqli_num_rows($result)>0){
                         while($row= mysqli_fetch_assoc($result)){
+                            // echo $_SESSION['pid'];
                  $dtotal+=$row['price'];
                 ?>
                 <div class="invoice">
